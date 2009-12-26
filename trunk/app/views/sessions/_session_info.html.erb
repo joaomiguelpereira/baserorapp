@@ -1,0 +1,25 @@
+<div id="session">
+    <%if has_session? -%>
+    <div id="user_wrapper">
+        <div id="user_name">
+            Olá <%= user_session.name %>
+            <%if user_session.facebook_user -%>
+            <img src="<%=images_url%>/fb_small.gif"/ width="15" height="15"><%end -%>
+        </div>
+        <div id="user_options">
+            <%if user_session.facebook_user %>
+            &nbsp;|&nbsp;<span><%= link_to_function 'Terminar Sessão', 'FB.Connect.logout(function() {logout()})' %></span>
+            <%else %>
+            &nbsp;|&nbsp;<%=link_to "Terminar Sessão", :controller=>:sessions, :action=>:destroy %>
+            <%end %>
+			&nbsp;|&nbsp;<%=link_to "Perfil", :controller=>:users, :action=>:show, :id=>user_session.user_id %>
+        </div>
+    </div>
+    <%if user_session.profile_picture_url -%>
+    <div id="user_profile_picture">
+        <img src="<%=user_session.profile_picture_url%>" alt="Profile Picture"/>
+    </div><%end -%>
+    <%else -%>
+    <%=link_to "Inicie uma Sessão", new_session_url %>ou <%=link_to "registe-se", :controller=>:users, :action=>:new %>
+    <%end -%>
+</div>
