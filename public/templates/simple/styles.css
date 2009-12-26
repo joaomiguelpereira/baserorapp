@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #5A554E;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    color: #32639A;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+/**User session
+ user_session_user_name*/
+#session {
+    
+}
+
+#session #user_wrapper {
+    float: left;
+}
+
+#session #user_profile_picture img{
+   clear:both;
+   margin-left: 10px;
+   width:48px;
+   height:48px;
+}
